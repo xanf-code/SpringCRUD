@@ -48,6 +48,7 @@ public class UserController {
         Optional<User> userOptional = userRepository.findByUsername(value);
         if (userOptional.isPresent()) {
             User user = userOptional.get();
+            System.out.println(user);
             return Optional.of(user);
         } else {
             throw new UserNotFoundException("User with username " + value + " not found");
